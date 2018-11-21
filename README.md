@@ -154,6 +154,13 @@ res = Stream.of(1,2,3,4,5).map(x -> x + 1);
 //> 2 3 4 5 6
 ```
 
+Pair workaround:
+
+```java
+Map<String, List<Int>> usages = ...;
+usages.stream().map(entry -> new AbstractMap.SimpleEntry<String, Int>(entry.getKey(), sum(entry.getValue())));
+```
+
 **filter** `filter(predicate)`<br>
 Retains elements that match the predicate
 
